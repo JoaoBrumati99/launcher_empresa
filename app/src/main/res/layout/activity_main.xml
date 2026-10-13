@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121824"
+    tools:context=".MainActivity">
+
+    <!-- Wallpaper Customizável da Galeria -->
+    <ImageView
+        android:id="@+id/imgCustomWallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/cd_app_icon"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <!-- Overlay Escuro Suave para Garantir Leitura do Texto e Ícones -->
+    <View
+        android:id="@+id/viewWallpaperOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#20000000" />
+
+    <!-- Topo Header (Relógio, Data, E-mail Corporativo e Botão Visível de Engrenagem do TI) -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowColor="#A0000000"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="4"
+                android:textColor="@android:color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:text="14:30" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:shadowColor="#A0000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="3"
+                android:textColor="#E0E0E0"
+                android:textSize="13sp"
+                tools:text="Quinta, 1 de Outubro" />
+
+            <TextView
+                android:id="@+id/txtCorporateEmailHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:shadowColor="#A0000000"
+                android:shadowRadius="3"
+                android:textColor="#81D4FA"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="funcionario@empresa.com"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <!-- Botão Visível de Configurações do TI -->
+        <ImageView
+            android:id="@+id/btnAdminSettings"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/admin_panel_title"
+            android:focusable="true"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_preferences"
+            app:tint="@android:color/white" />
+
+    </LinearLayout>
+
+    <!-- Widget do Tempo/Relógio Centralizado -->
+    <include
+        android:id="@+id/layoutWeatherWidget"
+        layout="@layout/widget_weather_oneui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout" />
+
+    <!-- Página Inicial (Grid de Apps Fixados pelo TI/Usuário) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHomeScreenApps"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutWeatherWidget" />
+
+    <!-- Mensagem se a página inicial estiver vazia -->
+    <TextView
+        android:id="@+id/txtNoPinnedApps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:gravity="center"
+        android:shadowColor="#A0000000"
+        android:shadowRadius="4"
+        android:text="@string/no_pinned_apps"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutWeatherWidget" />
+
+    <!-- Indicador Discreto no Rodapé de Arrastar para Cima -->
+    <LinearLayout
+        android:id="@+id/layoutBottomSwipeHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:background="@drawable/bg_drawer_handle" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Launcher Empresa</string>
+    <string name="cd_app_icon">Ícone do aplicativo</string>
+    <string name="admin_panel_title">Painel de Administração TI</string>
+    <string name="enter_admin_pin">Digite o PIN do Administrador (Padrão: 1234)</string>
+    <string name="pin_hint">PIN de Segurança</string>
+    <string name="confirm">Confirmar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="pin_incorrect">PIN Incorreto!</string>
+    <string name="no_apps_allowed">Nenhum aplicativo liberado. Acesse a área de TI para configurar os apps do dispositivo.</string>
+    <string name="lock_accounts_title">Bloquear Contas Pessoais (E-mail/Google)</string>
+    <string name="lock_accounts_desc">Impede que o usuário cadastre ou altere contas de e-mail no Android (DISALLOW_MODIFY_ACCOUNTS)</string>
+    <string name="select_apps_button">Selecionar Aplicativos Liberados</string>
+    <string name="kiosk_mode_button">Ativar Modo Kiosk / Lock Task</string>
+    <string name="wifi_settings_button">Configurações de Wi-Fi e Conexões</string>
+    <string name="change_pin_button">Alterar PIN de TI</string>
+    <string name="set_default_launcher_button">Definir como Launcher Padrão</string>
+    <string name="exit_app_button">Sair do Launcher / Fechar</string>
+    <string name="exit_app_confirm">Deseja fechar o LauncherEmpresa e sair do aplicativo?</string>
+    <string name="corporate_email_label">E-mail Corporativo Configurado:</string>
+    <string name="corporate_email_hint">ex: funcionario@suaempresa.com.br</string>
+    <string name="save">Salvar</string>
+
+    <!-- Wallpaper & TI UI Strings -->
+    <string name="pick_wallpaper_button">Escolher Foto de Fundo (Galeria)</string>
+    <string name="clear_wallpaper_button">Remover Foto de Fundo</string>
+    <string name="app_drawer_title">Gaveta de Aplicativos</string>
+    <string name="search_hint">Pesquisar</string>
+    <string name="weather_temp">29°</string>
+    <string name="weather_city">Brasília</string>
+    <string name="weather_desc">Previsão do Tempo</string>
+    <string name="no_pinned_apps">Página Inicial sem atalhos.\nArraste para cima para abrir a Gaveta de Apps e pressione e segure um app para adicioná-lo.</string>
+    <string name="add_to_home">Adicionar à Tela Inicial</string>
+    <string name="remove_from_home">Remover da Tela Inicial</string>
+    <string name="open_app">Abrir Aplicativo</string>
+
+    <!-- Dock Apps -->
+    <string name="dock_phone">Telefone</string>
+    <string name="dock_messages">Mensagens</string>
+    <string name="dock_camera">Câmera</string>
+</resources>

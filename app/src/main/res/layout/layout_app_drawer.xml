@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A00D111A"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="48dp"
+    android:paddingBottom="16dp">
+
+    <!-- Barra de Pesquisa Estilo One UI ("Pesquisar") -->
+    <LinearLayout
+        android:id="@+id/layoutSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_search_bar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/search_hint"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/edtSearchApps"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autofillHints="none"
+            android:background="@null"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingHorizontal="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#8899A6"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/btnAdminDots"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/admin_panel_title"
+            android:focusable="true"
+            android:padding="4dp"
+            android:src="@drawable/ic_three_dots" />
+
+    </LinearLayout>
+
+    <!-- Lista Grid de Aplicativos da Gaveta -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAppDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="12dp" />
+
+    <!-- Indicador de Páginas na Gaveta de Apps (PONTOS) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="8dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/bg_drawer_handle" />
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginHorizontal="4dp"
+            android:alpha="0.4"
+            android:background="@drawable/bg_drawer_handle" />
+
+    </LinearLayout>
+
+</LinearLayout>

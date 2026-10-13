@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fundo de Base Claro -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:endColor="#DCE2EC"
+                android:startColor="#E6ECF5" />
+        </shape>
+    </item>
+
+    <!-- Esfera Azul Esquerda (One UI Style) -->
+    <item
+        android:bottom="-100dp"
+        android:left="-200dp"
+        android:right="60dp"
+        android:top="120dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="135"
+                android:endColor="#0B2B7A"
+                android:startColor="#184BC4" />
+        </shape>
+    </item>
+
+    <!-- Esfera Laranja Direita (One UI Style) -->
+    <item
+        android:bottom="-180dp"
+        android:left="80dp"
+        android:right="-220dp"
+        android:top="220dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="45"
+                android:endColor="#D35400"
+                android:startColor="#F39C12" />
+        </shape>
+    </item>
+</layer-list>
